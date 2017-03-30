@@ -3,6 +3,14 @@
     <h3>Post An Article</h3>
   </header>
   <div>
+    <!--
+
+      We use # (hash) here to tell Angular to assign those tags to local variables
+      E.g. By adding # to the appropriate input elements we can pass them as variables to the postAnArticle function
+      This syntax is called resolve. This makes newTitle or newUrl now objects (of type HTMLInputElement) representing the input elements
+      And, becuase they're objects so that to get the value we access property value of each of the objects
+
+    -->
     <div>
       <label for="title">Title</label>
       <input name="title" #newTitle>
@@ -13,6 +21,14 @@
     </div>
   </div>
   <footer>
+    <!--
+
+      We tell Angular we wanna respond to an event by surrounding the event name in parenthesis
+      E.g. (click): we tell Angular that we wanna respond to the click event of the button element
+                    So, whenever a button is clicked, postAnArticle function will be invoked. Notice that
+                    postAnArticle function is a method of the component (here's SimpleReditCloneComponent)
+
+    -->
     <button (click)="postAnArticle(newTitle, newUrl)">Post</button>
   </footer>
 </form>

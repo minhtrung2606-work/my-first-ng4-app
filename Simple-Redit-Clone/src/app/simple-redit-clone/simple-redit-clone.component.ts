@@ -12,4 +12,11 @@ export class SimpleReditCloneComponent implements OnInit {
   ngOnInit() {
   }
 
+  postAnArticle(title: HTMLInputElement, url: HTMLInputElement): boolean {
+    console.log(`
+      Title: ${title.value}, URL: ${url.value}
+    `);
+    return false;
+  }
+
 }

@@ -1,3 +1,18 @@
-<p>
-  simple-redit-clone works!
-</p>
+<form>
+  <header>
+    <h3>Post An Article</h3>
+  </header>
+  <div>
+    <div>
+      <label for="title">Title</label>
+      <input name="title" #newTitle>
+    </div>
+    <div>
+      <label for="url">URL</label>
+      <input name="url" #newUrl>
+    </div>
+  </div>
+  <footer>
+    <button (click)="postAnArticle(newTitle, newUrl)">Post</button>
+  </footer>
+</form>

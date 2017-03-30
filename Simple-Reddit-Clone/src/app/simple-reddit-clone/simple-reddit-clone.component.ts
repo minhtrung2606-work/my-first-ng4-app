@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-simple-redit-clone',
-  templateUrl: './simple-redit-clone.component.html',
-  styleUrls: ['./simple-redit-clone.component.css']
+  selector: 'app-simple-reddit-clone',
+  templateUrl: './simple-reddit-clone.component.html',
+  styleUrls: ['./simple-reddit-clone.component.css']
 })
-export class SimpleReditCloneComponent implements OnInit {
+export class SimpleRedditCloneComponent implements OnInit {
 
   constructor() { }
 

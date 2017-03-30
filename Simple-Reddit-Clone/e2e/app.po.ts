@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class SimpleReditClonePage {
+export class SimpleRedditClonePage {
   navigateTo() {
     return browser.get('/');
   }

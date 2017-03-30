@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { SimpleReditCloneComponent } from './simple-redit-clone/simple-redit-clone.component';
+import { SimpleRedditCloneComponent } from './simple-reddit-clone/simple-reddit-clone.component';
 import { UserItemComponent } from './user-item/user-item.component';
 import { UserListComponent } from './user-list/user-list.component';
 
@@ -18,7 +18,7 @@ import { UserListComponent } from './user-list/user-list.component';
     // As in Angular idea: You have to declare components in a NgModule before you can use them in templates within that module
 
     AppComponent,
-    SimpleReditCloneComponent,
+    SimpleRedditCloneComponent,
     UserItemComponent,
     UserListComponent
   ],

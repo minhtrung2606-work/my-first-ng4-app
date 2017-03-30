@@ -1,10 +1,10 @@
-import { SimpleReditClonePage } from './app.po';
+import { SimpleRedditClonePage } from './app.po';
 
-describe('simple-redit-clone App', () => {
-  let page: SimpleReditClonePage;
+describe('simple-reddit-clone App', () => {
+  let page: SimpleRedditClonePage;
 
   beforeEach(() => {
-    page = new SimpleReditClonePage();
+    page = new SimpleRedditClonePage();
   });
 
   it('should display message saying app works', () => {

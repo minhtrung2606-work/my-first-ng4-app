@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SimpleReditCloneComponent } from './simple-redit-clone.component';
+import { SimpleRedditCloneComponent } from './simple-reddit-clone.component';
 
-describe('SimpleReditCloneComponent', () => {
-  let component: SimpleReditCloneComponent;
-  let fixture: ComponentFixture<SimpleReditCloneComponent>;
+describe('SimpleRedditCloneComponent', () => {
+  let component: SimpleRedditCloneComponent;
+  let fixture: ComponentFixture<SimpleRedditCloneComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SimpleReditCloneComponent ]
+      declarations: [ SimpleRedditCloneComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SimpleReditCloneComponent);
+    fixture = TestBed.createComponent(SimpleRedditCloneComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

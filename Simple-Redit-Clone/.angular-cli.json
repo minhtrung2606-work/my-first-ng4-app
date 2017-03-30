@@ -12,6 +12,8 @@
         "favicon.ico"
       ],
       "index": "index.html",
+
+      "COMMENT-main": "Here declares the entry-point of our application which bootstraps our application",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
       "test": "test.ts",

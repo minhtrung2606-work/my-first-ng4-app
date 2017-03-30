@@ -1,6 +1,6 @@
 <ul>
   <li *ngFor="let name of names">
-    Hello {{name}}
+    <app-user-item [name]="name"></app-user-item>
   </li>
 
   <!--
@@ -10,5 +10,6 @@
     2. names: is the property of this component class. Here's UserListComponent
     3. let name: is called a reference
     4. let name of names: loop over each element of collection names and assign each one to a local variable called name
+    5. [name]: pass a value to a component. This says that we wanna pass a value to the input named name
   -->
 </ul>

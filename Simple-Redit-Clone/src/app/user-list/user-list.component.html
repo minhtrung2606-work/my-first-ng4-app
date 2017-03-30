@@ -1,0 +1,14 @@
+<ul>
+  <li *ngFor="let name of names">
+    Hello {{name}}
+  </li>
+
+  <!--
+    Template syntax description:
+    1. *ngFor: says we wanna use directive NgFor in li element. It's kinda for loop which create a new DOM element for every item in the
+      collection.
+    2. names: is the property of this component class. Here's UserListComponent
+    3. let name: is called a reference
+    4. let name of names: loop over each element of collection names and assign each one to a local variable called name
+  -->
+</ul>

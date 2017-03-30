@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { SimpleRedditCloneComponent } from './simple-reddit-clone/simple-reddit-clone.component';
 import { UserItemComponent } from './user-item/user-item.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { ArticleComponent } from './article/article.component';
 
 // import: describes which dependencies this module has
 // BrowserModule: as we're creating a Web application
@@ -20,7 +21,8 @@ import { UserListComponent } from './user-list/user-list.component';
     AppComponent,
     SimpleRedditCloneComponent,
     UserItemComponent,
-    UserListComponent
+    UserListComponent,
+    ArticleComponent
   ],
   imports: [
 

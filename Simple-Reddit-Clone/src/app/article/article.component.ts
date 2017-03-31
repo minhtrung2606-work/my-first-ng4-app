@@ -17,6 +17,12 @@ export class ArticleComponent implements OnInit {
   // - Be able to configure our host element within the component
 
   @HostBinding('attr.class') cssClass = 'article row';
+
+  // The point of making a component is not only encapsulation but also reusability
+  // For the first time ArticleComponent has hard coded to have a concrete instance of Article data structure. This results in the component
+  // cannot be reused for different instances of Article data structure. Then make property article become an input of the component so that
+  // the instance this property holds can be populated/passed in from the outside.
+
   @Input() article: Article;
 
   constructor() {

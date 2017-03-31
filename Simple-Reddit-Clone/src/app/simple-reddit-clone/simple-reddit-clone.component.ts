@@ -10,19 +10,24 @@ export class SimpleRedditCloneComponent implements OnInit {
   articles: Array<Article>;
 
   constructor() {
-    this.articles = [
-      new Article('Article 1', 'article1.example.com'),
-      new Article('Article 2', 'article2.example.com')
-    ];
+    this.articles = [];
   }
 
   ngOnInit() {
   }
 
   postAnArticle(title: HTMLInputElement, url: HTMLInputElement): boolean {
-    console.log(`
-      Title: ${title.value}, URL: ${url.value}
-    `);
+    // Instantiate a new instance of Article data structure using HTMLInputElement instances' values
+    var newArticle = new Article(title.value, url.value);
+
+    // Store newly instantiated object to the property articles
+    this.articles.push(newArticle);
+
+    // Reset the values of HTMLInputElement instances
+    title.value = '';
+    url.value = '';
+
+    // TODO-Why return fales here. I need an answer >"<
     return false;
   }
 

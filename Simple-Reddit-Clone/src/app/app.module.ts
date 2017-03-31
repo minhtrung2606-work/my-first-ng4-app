@@ -1,3 +1,11 @@
+// import statement defines the modules we wanna use to write our code
+// There are two parts:
+// - Portion (here's @angular/core): tells our program where to find the dependencies
+// - Dependency: things exported from the the portion
+
+// The main ided of importing: we're pulling out dependencies from another module (portions) and making these dependencies available for use
+// in this file
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';

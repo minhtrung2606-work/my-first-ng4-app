@@ -8,3 +8,5 @@ A: It depends.
 BP: If our templates are shorter than a page then put 'em alongside the code.
 BP-Pros: Both views and logics are in the same place, it's easy to understand how they interact with each other
 BP-Cons: Some editors do not support syntax highlighting of internal string
+
+2. A good practice when writing Angular code is to isolate the data structures we're using from the component

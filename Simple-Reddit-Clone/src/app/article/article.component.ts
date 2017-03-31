@@ -27,6 +27,12 @@ export class ArticleComponent implements OnInit {
   }
 
   voteUp(): boolean {
+    // For the first time right after isolating the data structure this method still accessed directly to the internal property of the data
+    // structure meaning this.article.point++. However, this would break LoD (Law of Demeter) which mentions that a given object should
+    // assume as little as possible about the structure or properties of anything else
+
+    // So the Article data structure provides a method (here's increase) to hide its internal propertie from outside direct access
+
     this.article.increase();
 
     // For the first time this method does not return anything. But this would cause the page reload whenever user clicks on the link

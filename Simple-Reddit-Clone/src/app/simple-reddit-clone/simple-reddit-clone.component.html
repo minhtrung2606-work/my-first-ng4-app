@@ -32,4 +32,6 @@
     <button (click)="postAnArticle(newTitle, newUrl)">Post</button>
   </footer>
 </form>
-<app-article></app-article>
+<div class="article-list">
+  <app-article *ngFor="let articleItem of articles" [article]="articleItem"></app-article>
+</div>

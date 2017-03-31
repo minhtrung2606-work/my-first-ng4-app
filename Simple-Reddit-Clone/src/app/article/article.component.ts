@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding, Input } from '@angular/core';
 import { Article } from './article';
 
 @Component({
@@ -17,10 +17,10 @@ export class ArticleComponent implements OnInit {
   // - Be able to configure our host element within the component
 
   @HostBinding('attr.class') cssClass = 'article row';
-  article: Article;
+  @Input() article: Article;
 
   constructor() {
-    this.article = new Article('Unknown', 'example.com');
+
   }
 
   ngOnInit() {

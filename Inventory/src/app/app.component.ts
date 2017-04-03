@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product } from './product';
 
 // Below is called Component Decorator which is used to configure how the outside world would use/interact your component
 
@@ -8,4 +9,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  product: Product;
+
+  constructor() {
+    this.product = new Product(
+      'nice-hat',
+      'A really nice hat',
+      'resources/images/products/nice-hat.jpg',
+      ['Men', 'Accessories', 'Hat'],
+      29.99
+    );
+  }
 }

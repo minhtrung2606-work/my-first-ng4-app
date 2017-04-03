@@ -8,6 +8,13 @@
               - A return value of a component's method
   -->
 
+  <!--
+    Data flows into your component via input binding and events flows out of your component through output binding
+    Think of the set of Input + Output bindings as defining the PUBLIC API of your component
+    [squareBrackets] pass Input: you pass data into child component
+    (parens) handle Output: you send data out of the child component
+  -->
+
   <product-list
     [productList]="productList"
     (onAProductSelected)="onAProductSelected($event)">

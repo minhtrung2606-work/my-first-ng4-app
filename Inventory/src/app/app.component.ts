@@ -9,15 +9,28 @@ import { Product } from './product';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  product: Product;
+  productList: Array<Product>;
 
   constructor() {
-    this.product = new Product(
-      'nice-hat',
-      'A really nice hat',
-      'resources/images/products/nice-hat.jpg',
-      ['Men', 'Accessories', 'Hat'],
-      29.99
-    );
+    this.productList = [
+      new Product(
+        'nice-hat',
+        'A really nice hat',
+        'resources/images/products/nice-hat.jpg',
+        ['Men', 'Accessories', 'Hat'],
+        29.99
+      ),
+      new Product(
+        'neato-jacket',
+        'Blue Jacket',
+        'resources/images/products/blue-neato-jacket.jpg',
+        ['Women', 'Apparel', 'Jackets and Vests'],
+        239.99
+      )
+    ];
+  }
+
+  onAProductSelected(product):void {
+    console.log('${product.name} selected');
   }
 }

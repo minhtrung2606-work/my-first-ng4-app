@@ -8,6 +8,8 @@
               - A return value of a component's method
   -->
 
-  <h1>{{product.name}}</h1>
-  <h1>{{product.sku}}</h1>
+  <product-list
+    [productList]="productList"
+    (onAProductSelected)="onAProductSelected($event)">
+  </product-list>
 </div>

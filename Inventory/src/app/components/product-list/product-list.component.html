@@ -1,0 +1,7 @@
+<div class="product-list-component">
+  <product *ngFor="let productItem of productList"
+    [product]="productItem"
+    (click)="onProductClicked(productItem)"
+    [class.selected]="isProductSelected(productItem)">
+  </product>
+</div>

@@ -5,4 +5,8 @@ export class Product {
     public imageUrl: string,
     public departments: Array<string>,
     public price: number) {}
+
+  equals(product: Product): boolean {
+    return product && this.sku === product.sku;
+  }
 }

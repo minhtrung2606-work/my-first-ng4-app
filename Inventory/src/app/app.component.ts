@@ -30,7 +30,7 @@ export class AppComponent {
     ];
   }
 
-  onAProductSelected(product):void {
+  onProductSelected(product):void {
     console.log('${product.name} selected');
   }
 }

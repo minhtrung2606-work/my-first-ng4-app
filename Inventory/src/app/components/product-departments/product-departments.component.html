@@ -1,6 +1,20 @@
 <div class="product-departments">
+  <!--
+
+    - ngFor: the second expression to get the iteration number out of the NgFor directive
+             There might be multiple expressions within NgFor directive. Each is saperated by a semi colon
+
+  -->
   <span *ngFor="let department of product.departments; let i = index">
     <a href>{{department}}</a>
+
+    <!--
+
+      - condition ? value1 : value2: is called ternary operator
+                                     which is in this case to print out the ">" symbol only if the department string
+                                     is no the last one in the array
+
+    -->
     <span>{{(i < product.departments.length - 1) ? '>' : ''}}</span>
   </span>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostBinding } from '@angular/core';
 import { Product } from './../../product';
 
 @Component({
@@ -13,6 +13,8 @@ export class ProductListComponent implements OnInit {
   // Pass out the current product whenever a product is selected
   // Selected is done by clicked and marked selected
   @Output() onProductSelected: EventEmitter<Product>;
+
+  @HostBinding('attr.class') cssClass = 'product-list';
 
   // Private property of this component to keep the current selected product
   private currentProduct: Product;

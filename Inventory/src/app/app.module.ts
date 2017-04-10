@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -9,6 +9,7 @@ import { ProductComponent } from './components/product/product.component';
 import { ProductImageComponent } from './components/product-image/product-image.component';
 import { ProductPriceComponent } from './components/product-price/product-price.component';
 import { ProductDepartmentsComponent } from './components/product-departments/product-departments.component';
+import { ProductFormComponent } from './components/product-form/product-form.component';
 
 // At first, module system (introduced by Angular) helps organize your code
 // Compared to AngularJS 1.x, you have to specify which components you're gonna be using in your app
@@ -29,11 +30,13 @@ import { ProductDepartmentsComponent } from './components/product-departments/pr
     ProductComponent,
     ProductImageComponent,
     ProductPriceComponent,
-    ProductDepartmentsComponent
+    ProductDepartmentsComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule
   ],
   providers: [],

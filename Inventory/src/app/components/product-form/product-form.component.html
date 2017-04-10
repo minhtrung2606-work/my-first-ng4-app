@@ -1,0 +1,14 @@
+<div>
+  <h3>Product Form</h3>
+  <form class="form"
+    #f="ngForm"
+    (ngSubmit)="onFormSubmit(f.value)">
+
+    <div class="field">
+      <label for="skuInput">SKU</label>
+      <input type="text" id="skuInput" name="SKU" placeholder="Enter a SKU" ngModel/>
+    </div>
+
+    <button type="submit" class="button">Submit</button>
+  </form>
+</div>

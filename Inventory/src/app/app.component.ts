@@ -16,14 +16,14 @@ export class AppComponent {
       new Product(
         'nice-hat',
         'A really nice hat',
-        'resources/images/products/nice-hat.jpg',
+        'assets/resources/images/products/nice-hat.jpg',
         ['Men', 'Accessories', 'Hat'],
         29.99
       ),
       new Product(
         'neato-jacket',
         'Blue Jacket',
-        'resources/images/products/blue-neato-jacket.jpg',
+        'assets/resources/images/products/blue-neato-jacket.jpg',
         ['Women', 'Apparel', 'Jackets and Vests'],
         239.99
       )

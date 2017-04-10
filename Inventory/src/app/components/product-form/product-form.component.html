@@ -1,12 +1,44 @@
 <div>
   <h3>Product Form</h3>
+
+  <!--
+
+    - Whenever NgForm is included/marked to be accessible within your module then the component will be automatically
+      attached to any <form> tag in your template and silently supplies:
+      + An instance of type FormGroup named ngForm
+      + A (ngSubmit) output
+
+    - #v=thing syntax: says we wanna create a local variable named `v` used in this template and is assigned to `thing`
+
+    - It seems like we have a typo here when we're saying #f="ngForm". But there was no typo.
+      If ngForm is the key then that means we wanna use NgForm on this attribute and assigning a reference to the type
+      FormGroup which is held by local variable `f` of this template (meaning local variable `l` had been assigned to
+      hold an reference to an instance of type FormGroup before being assigned to NgForm component as an input)
+      Here, we're trying to EXPORT an instance of type FormGroup which is automatically instantiated by NgForm component via
+      ngForm local variable to an alias variable named `f`
+
+    - Notice that we didn't attach any NgForm component here in the form tag but we could still use (ngSubmit) output in the
+      <form> tag because (like it stated before) once FormsModule is imported into your module then NgForm component is auto-
+      matically attached to any <form> tag to supply an instance of type FormGroup via ngForm and an output ngSubmit for use
+
+    - When we use ngModel with no attribute value within automatically attached ngForm component like this, we state:
+      + A one-way data binding
+      + We wanna create a FormControl on this input with the name of sku (the value of the name attribute in the input
+        tag)
+
+    - ngModel in this case creates a new FormControl that is automatically added to the parent FormGroup (here's ngForm)
+      and then bind a DOM element to this FormControl instance which means it builds up a association between the input
+      tag in our view/template and the FormControl which is matched by a name of "sku"
+
+  -->
+
   <form class="form"
     #f="ngForm"
     (ngSubmit)="onFormSubmit(f.value)">
 
     <div class="field">
       <label for="skuInput">SKU</label>
-      <input type="text" id="skuInput" name="SKU" placeholder="Enter a SKU" ngModel/>
+      <input type="text" id="skuInput" name="sku" placeholder="Enter a SKU" ngModel/>
     </div>
 
     <button type="submit" class="button">Submit</button>

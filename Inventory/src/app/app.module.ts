@@ -35,8 +35,18 @@ import { ProductFormComponent } from './components/product-form/product-form.com
   ],
   imports: [
     BrowserModule,
+
+    // To use form library of Angular we need to import the two below modules which are under @angular/forms
+    // FormsModule is to provide template driven directives such as
+    // - ngModel (here we're mentioning about selector which is used in template)
+    // - NgForm (here we're mentioning about the class of the component)
     FormsModule,
+
+    // ReactiveFormsModule provides such the following directives:
+    // - formControl
+    // - ngFormGroup
     ReactiveFormsModule,
+
     HttpModule
   ],
   providers: [],

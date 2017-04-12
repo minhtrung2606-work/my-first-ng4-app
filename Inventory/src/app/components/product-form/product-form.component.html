@@ -32,7 +32,7 @@
 
   -->
 
-  <form class="form"
+  <!-- <form class="form"
     #f="ngForm"
     (ngSubmit)="onFormSubmit(f.value)">
 
@@ -40,6 +40,21 @@
       <label class="label" for="skuInput">SKU</label>
       <div class="control">
         <input type="text" id="skuInput" name="sku" placeholder="Enter a SKU" ngModel/>
+      </div>
+    </div>
+
+    <button type="submit" class="button">Submit</button>
+  </form> -->
+
+  <form class="form"
+    [formGroup]="myForm"
+    (ngSubmit)="onFormSubmit(myForm.value)">
+
+    <div class="field">
+      <label class="label" for="skuInput">SKU</label>
+      <div class="control">
+        <input type="text" id="skuInput" placeholder="Enter a SKU"
+               [formControl]="myForm.controls['sku']"/>
       </div>
     </div>
 

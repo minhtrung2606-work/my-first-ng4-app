@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'product-form',
@@ -6,13 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-form.component.css']
 })
 export class ProductFormComponent implements OnInit {
+  myForm: FormGroup;
 
-  constructor() { }
+  constructor(fb: FormBuilder) {
+    this.myForm = fb.group({
+      sku: ['sample-sku']
+    });
+  }
 
   ngOnInit() {
   }
 
-  onSubmit(value: any): void {
+  onSubmit(value: string): void {
     console.log('You\'ve submitted value:', value);
   }
 }

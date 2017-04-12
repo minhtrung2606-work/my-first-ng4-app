@@ -1,13 +1,15 @@
-<product-image [product]="product"></product-image>
-<div class="content">
-  <div class="header">
-    {{product.name}}
+<div class="product-item">
+  <product-image [product]="product"></product-image>
+  <div class="content">
+    <div class="header">
+      <strong>{{product.name}}</strong>
+    </div>
+    <div class="meta">
+      <div class="product-sku"><small>SKU #{{product.sku}}</small></div>
+    </div>
+    <div class="description">
+      <product-departments [product]="product"></product-departments>
+    </div>
   </div>
-  <div class="meta">
-    <div class="product-sku">SKU #{{product.sku}}</div>
-  </div>
-  <div class="description">
-    <product-departments [product]="product"></product-departments>
-  </div>
+  <product-price [price]="product.price"></product-price>
 </div>
-<product-price [price]="product.price"></product-price>

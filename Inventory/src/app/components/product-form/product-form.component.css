@@ -1,0 +1,18 @@
+.product-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: thin solid #e5e5e5;
+  padding: 10px;
+}
+.product-form .field .label,
+.product-form .field .control {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.product-form .field .control input {
+  padding: 5px;
+}
+.product-form button {
+  padding: 5px;
+}

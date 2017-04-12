@@ -1,5 +1,5 @@
-<div>
-  <h3>Product Form</h3>
+<div class="product-form">
+  <h1>Product Form</h1>
 
   <!--
 
@@ -37,8 +37,10 @@
     (ngSubmit)="onFormSubmit(f.value)">
 
     <div class="field">
-      <label for="skuInput">SKU</label>
-      <input type="text" id="skuInput" name="sku" placeholder="Enter a SKU" ngModel/>
+      <label class="label" for="skuInput">SKU</label>
+      <div class="control">
+        <input type="text" id="skuInput" name="sku" placeholder="Enter a SKU" ngModel/>
+      </div>
     </div>
 
     <button type="submit" class="button">Submit</button>

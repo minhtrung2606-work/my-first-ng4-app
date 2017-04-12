@@ -1,7 +1,4 @@
 .product-form {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   border: thin solid #e5e5e5;
   padding: 10px;
 }

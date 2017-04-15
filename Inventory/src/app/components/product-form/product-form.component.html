@@ -46,6 +46,21 @@
     <button type="submit" class="button">Submit</button>
   </form> -->
 
+  <!--
+
+    - In the previous example we took use of automatically embeded NgForm and it silently created an instance of FormGroup for us
+      to use.
+    - But in the following example we explicitly use an instance of type FormGroup which is created in our component constructor
+      function.
+    - It's weird to say in the previous example Angular automatically creates NgForm in a <form> tag. But it's not. There is an
+      exception that NgForm will not be applied when there is a formGroup attribute located in the <form> tag.
+
+    - In the previous example, an NgModel directive is used to create a new FormControl and it used the input attribute "name" to
+      add it to the parent FormGroup ngForm. However when we wanna bind an existing FormControl to an input we need to pull it out
+      from our FormGroup (myForm in this case)
+
+  -->
+
   <form class="form"
     [formGroup]="myForm"
     (ngSubmit)="onFormSubmit(myForm.value)">

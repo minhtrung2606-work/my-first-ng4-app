@@ -82,12 +82,35 @@
       <div class="control">
         <input type="text" id="skuInput" placeholder="Enter a SKU"
                [formControl]="sku"/>
+
+        <!--
+
+          - Add error text if sku is not valid detected by sku.isValid and sku.touched
+          - sku.touched: is used to imply that we only wanna show the error text if the use has tried editing the field
+
+        -->
         <div *ngIf="!sku.valid && sku.touched">
           <span style="font-style: italic; color: red;">Sku is not valid</span>
         </div>
+
+        <!--
+
+          - Another way of display an error text is to use hasError method form sku FormControl.
+            This way helps check validity of a field with specific validator
+          - sku.touched: is used to imply that we only wanna show the error text if the use has tried editing the field
+
+        -->
         <div *ngIf="sku.hasError('required') && sku.touched">
           <span style="font-style: italic; color: red;">hasError: Sku is not valid</span>
         </div>
+
+        <!--
+
+          - Another way of checking validity of a field via hasError method is by using myForm with a path to the FormControl
+            defined within myForm as a second argument;
+          - sku.touched: is used to imply that we only wanna show the error text if the use has tried editing the field
+
+        -->
         <div *ngIf="myForm.hasError('required', 'sku') && myForm.controls['sku'].touched">
           <span style="font-style: italic; color: red;">hasError form myForm: Sku is not valid</span>
         </div>

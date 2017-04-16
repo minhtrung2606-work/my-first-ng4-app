@@ -30,7 +30,19 @@ export class ProductFormComponent implements OnInit {
     // Export sku FormControl to be used in our view
     this.sku = this.myForm.controls['sku'];
 
+    // Try to get an EventEmitter provided by this FormControl sku
+    // Then subscribe to this EventEmitter
     this.sku.valueChanges.subscribe(
+
+      // Use arrow function to access outer scope more easily
+      // If an ordinary function is passed in then we have to declare a variable referering to the component instance
+      // Like in the following code listing
+
+      // var myself = this;
+      // this.sku.valueChanges.subscribe(function (value) {
+      //   myself.skuValue = value;
+      // });
+
       (value: string) => {
         this.skuValue = value;
       }

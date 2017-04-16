@@ -17,10 +17,14 @@ export class ProductFormComponent implements OnInit {
     // Newly added FormControl will be used in the template like this
     // <input [formControl]="myForm.controls['sku']">
 
+    // Add validator to sku FormControl of myForm
+    // Validators.required is one of built-ins Validators from Angular
+
     this.myForm = fb.group({
       sku: ['', Validators.required]
     });
 
+    // Export sku FormControl to be used in our view
     this.sku = this.myForm.controls['sku'];
   }
 

@@ -61,6 +61,14 @@
 
   -->
 
+  <!--
+
+    - Because we already added validators to our FormGroup myForm, we can use valid property indicating whether a form is valid
+      to display an error message. Remember because myForm is of type FormGroup and it's only valid when all its children
+      FormControls are also valid
+
+  -->
+
   <div *ngIf="!myForm.valid">
     <span style="font-style: italic; color: red;">Form is not valid</span>
   </div>
@@ -73,10 +81,19 @@
       <label class="label" for="skuInput">SKU</label>
       <div class="control">
         <input type="text" id="skuInput" placeholder="Enter a SKU"
-               [formControl]="myForm.controls['sku']"/>
+               [formControl]="sku"/>
+        <div *ngIf="!sku.valid && sku.touched">
+          <span style="font-style: italic; color: red;">Sku is not valid</span>
+        </div>
+        <div *ngIf="sku.hasError('required') && sku.touched">
+          <span style="font-style: italic; color: red;">hasError: Sku is not valid</span>
+        </div>
+        <div *ngIf="myForm.hasError('required', 'sku') && myForm.controls['sku'].touched">
+          <span style="font-style: italic; color: red;">hasError form myForm: Sku is not valid</span>
+        </div>
       </div>
     </div>
 
-    <button type="submit" class="button">Submit</button>
+    <button [disabled]="!myForm.valid" type="submit" class="button">Submit</button>
   </form>
 </div>

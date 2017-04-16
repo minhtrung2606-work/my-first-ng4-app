@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'product-form',
@@ -21,11 +21,17 @@ export class ProductFormComponent implements OnInit {
     // Validators.required is one of built-ins Validators from Angular
 
     this.myForm = fb.group({
-      sku: ['', Validators.required]
+      sku: ['', Validators.compose([Validators.required, invalidSkuSuffix])]
     });
 
     // Export sku FormControl to be used in our view
     this.sku = this.myForm.controls['sku'];
+
+    function invalidSkuSuffix(control: FormControl): {[s: string]: boolean} {
+      if (!control.value.match(/^ksu_/)) {
+        return {invalidSkuSuffix: true};
+      }
+    }
   }
 
   ngOnInit() {

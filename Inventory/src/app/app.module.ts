@@ -10,6 +10,7 @@ import { ProductImageComponent } from './components/product-image/product-image.
 import { ProductPriceComponent } from './components/product-price/product-price.component';
 import { ProductDepartmentsComponent } from './components/product-departments/product-departments.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
+import { CompleteProductFormComponent } from './components/complete-product-form/complete-product-form.component';
 
 // At first, module system (introduced by Angular) helps organize your code
 // Compared to AngularJS 1.x, you have to specify which components you're gonna be using in your app
@@ -31,7 +32,8 @@ import { ProductFormComponent } from './components/product-form/product-form.com
     ProductImageComponent,
     ProductPriceComponent,
     ProductDepartmentsComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    CompleteProductFormComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,4 @@
 <div class="product-list">
-  <product-form></product-form>
-  <hr />
   <product *ngFor="let productItem of productList"
     [product]="productItem"
     (click)="onProductClicked(productItem)"

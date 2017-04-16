@@ -1,0 +1,30 @@
+.product-form-field {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+.product-form-field label {
+  display: block;
+  font-weight: 700;
+}
+.product-form-field input {
+  display: block;
+  padding: 0.3rem;
+  border-radius: 0.4rem;
+  outline: none;
+  border: thin solid #d3d3d3;
+  min-width: 15rem;
+}
+.product-form-field .guideline {
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.5);
+}
+.product-form button {
+  padding: 0.3rem;
+  border-radius: 0.4rem;
+  border: thin solid darkgray;
+  outline: none;
+}
+.product-form button.primary {
+  background-color: darkcyan;
+  color: white;
+}

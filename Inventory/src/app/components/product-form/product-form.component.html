@@ -61,6 +61,10 @@
 
   -->
 
+  <div *ngIf="!myForm.valid">
+    <span style="font-style: italic; color: red;">Form is not valid</span>
+  </div>
+
   <form class="form"
     [formGroup]="myForm"
     (ngSubmit)="onFormSubmit(myForm.value)">

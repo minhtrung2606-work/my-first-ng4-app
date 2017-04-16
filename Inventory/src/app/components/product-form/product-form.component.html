@@ -115,8 +115,8 @@
           <span style="font-style: italic; color: red;">hasError form myForm: Sku is not valid</span>
         </div>
 
-        <div *ngIf="myForm.controls['sku'].hasError('invalidSkuSuffix') && myForm.controls['sku'].touched">
-          <span style="font-style: italic; color: red;">hasErrorOf('invalidSkuSuffix'): Sku must start with "sku_"</span>
+        <div *ngIf="myForm.controls['sku'].hasError('invalidSkuPrefix') && myForm.controls['sku'].touched">
+          <span style="font-style: italic; color: red;">hasErrorOf('invalidSkuPrefix'): Sku must start with "sku_"</span>
         </div>
       </div>
     </div>
@@ -124,4 +124,9 @@
     <button [disabled]="!myForm.valid" type="submit" class="button">Submit</button>
     <button type="button" (click)="changeFormControlValue()">Change FormControl Value</button>
   </form>
+  <hr />
+  <div>
+    <h3>What you're inputing in SKU</h3>
+    <span>{{skuValue}}</span>
+  </div>
 </div>

@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, FormControl, Validators, AbstractControl } from
 export class ProductFormComponent implements OnInit {
   myForm: FormGroup;
   sku: AbstractControl;
+  skuValue: string;
 
   constructor(fb: FormBuilder) {
 
@@ -23,18 +24,24 @@ export class ProductFormComponent implements OnInit {
     // To add multiple validators we use Validators.compose method which accepts an array of validators
 
     this.myForm = fb.group({
-      sku: ['', Validators.compose([Validators.required, invalidSkuSuffix])]
+      sku: ['', Validators.compose([Validators.required, invalidSkuPrefix])]
     });
 
     // Export sku FormControl to be used in our view
     this.sku = this.myForm.controls['sku'];
 
+    this.sku.valueChanges.subscribe(
+      (value: string) => {
+        this.skuValue = value;
+      }
+    );
+
     // Custom validator is kinda pure function which accepts a form control of type FormControl and
     // returns a StringMap<string, boolean> with the error name and state of it
-    function invalidSkuSuffix(control: FormControl): {[s: string]: boolean} {
-      if (!control.value.match(/^ksu_/)) {
+    function invalidSkuPrefix(control: FormControl): {[s: string]: boolean} {
+      if (!control.value.match(/^sku_/)) {
         // Check if a sku whether it starts with 'sku_'
-        return {invalidSkuSuffix: true};
+        return {invalidSkuPrefix: true};
       }
     }
   }

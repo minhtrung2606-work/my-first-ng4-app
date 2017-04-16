@@ -45,4 +45,9 @@ export class ProductFormComponent implements OnInit {
   onSubmit(value: string): void {
     console.log('You\'ve submitted value:', value);
   }
+
+  changeFormControlValue(): void {
+    // This will never happen because this is one-way binding from view to model only
+    this.sku.value = 'CHANGED';
+  }
 }

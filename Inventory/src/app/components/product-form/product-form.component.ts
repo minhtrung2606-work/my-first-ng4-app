@@ -20,6 +20,8 @@ export class ProductFormComponent implements OnInit {
     // Add validator to sku FormControl of myForm
     // Validators.required is one of built-ins Validators from Angular
 
+    // To add multiple validators we use Validators.compose method which accepts an array of validators
+
     this.myForm = fb.group({
       sku: ['', Validators.compose([Validators.required, invalidSkuSuffix])]
     });
@@ -27,8 +29,11 @@ export class ProductFormComponent implements OnInit {
     // Export sku FormControl to be used in our view
     this.sku = this.myForm.controls['sku'];
 
+    // Custom validator is kinda pure function which accepts a form control of type FormControl and
+    // returns a StringMap<string, boolean> with the error name and state of it
     function invalidSkuSuffix(control: FormControl): {[s: string]: boolean} {
       if (!control.value.match(/^ksu_/)) {
+        // Check if a sku whether it starts with 'sku_'
         return {invalidSkuSuffix: true};
       }
     }

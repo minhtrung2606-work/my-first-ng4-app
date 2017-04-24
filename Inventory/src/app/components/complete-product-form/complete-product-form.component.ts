@@ -7,7 +7,7 @@ class InAppValidator {
       let regEpx = new RegExp('^' + str, 'i');
       let valid = regEpx.test(control.value);
       let result = {};
-      result[validatorName] = valid;
+      result[validatorName] = !valid;
       return result;
     };
   }
@@ -25,7 +25,7 @@ export class CompleteProductFormComponent implements OnInit {
     this.myForm = fb.group({
       sku: ['sku_', Validators.compose([Validators.required, InAppValidator.buildStartWithValidator('start_with_sku', 'sku_')])],
       name: ['Unknown', Validators.required],
-      departments: ['', Validators.required],
+      departments: ['Unknown', Validators.required],
       price: [0, Validators.required]
     });
   }

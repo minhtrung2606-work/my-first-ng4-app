@@ -7,20 +7,30 @@
     <label for="product-sku">SKU</label>
     <input type="text" name="sku" id="product-sku"
            [formControl]="myForm.get('sku')"/>
+    <div class="validation">
+      <span class="error" *ngIf="myForm.get('sku').hasError('required')"><em>SKU cannot be empty</em></span>
+      <span class="error" *ngIf="myForm.get('sku').hasError('start_with_sku')"><em>SKU must start with <strong>"sku_"</strong></em></span>
+    </div>
   </div>
 
   <div class="product-form-field">
     <label for="product-name">Title</label>
     <input type="text" name="name" id="product-name"
            [formControl]="myForm.get('name')"/>
+    <div class="validation">
+      <span class="error" *ngIf="myForm.get('name').hasError('required')"><em>Title cannot be empty</em></span>
+    </div>
   </div>
 
   <div class="product-form-field">
     <label for="product-departments">Departments</label>
-    <input type="text" name="departments" id="product-departments"
-           [formControl]="myForm.get('departments')"/>
     <div>
       <small class="guideline">Departments saperated by comas</small>
+    </div>
+    <input type="text" name="departments" id="product-departments"
+           [formControl]="myForm.get('departments')"/>
+    <div class="validation">
+      <span class="error" *ngIf="myForm.get('departments').hasError('required')"><em>Title cannot be empty</em></span>
     </div>
   </div>
 

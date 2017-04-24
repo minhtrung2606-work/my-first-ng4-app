@@ -28,3 +28,6 @@
   background-color: darkcyan;
   color: white;
 }
+.product-form .validation .error {
+  color: red;
+}

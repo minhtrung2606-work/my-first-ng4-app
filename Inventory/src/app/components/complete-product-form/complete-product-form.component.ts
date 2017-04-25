@@ -4,9 +4,16 @@ import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl, Valid
 class InAppValidator {
   static buildStartWithValidator(validatorName: string, str: string): ValidatorFn {
     return function (control: AbstractControl): {[s: string]: boolean} {
-      let regEpx = new RegExp('^' + str, 'i');
-      let valid = regEpx.test(control.value);
+      let valid = !!control;
       let result = {};
+      let regEpx;
+
+      if (control && control.value) {
+        // This makes this validator only return false if input value is not an empty string and does not start with str
+        regEpx = new RegExp('^' + str, 'i');
+        valid = regEpx.test(control.value);
+      }
+
       result[validatorName] = !valid;
       return result;
     };

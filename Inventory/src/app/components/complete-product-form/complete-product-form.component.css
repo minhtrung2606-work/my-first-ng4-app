@@ -31,3 +31,15 @@
 .product-form .validation .error {
   color: red;
 }
+.product-form {
+  padding: 1rem;
+  border-right: thin solid;
+}
+.product-detail {
+  padding: 1rem;
+  min-width: 25rem;
+}
+.complete-product-form {
+  display: flex;
+  align-items: stretch;
+}
